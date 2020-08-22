@@ -1,6 +1,6 @@
 {
   "name": "@aspectron/flow-logger",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Logging Subsystems",
   "main": "index.js",
   "repository": {
@@ -9,7 +9,9 @@
   },
   "keywords": [],
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "ansi-regex": "*"
+  },
   "devDependencies": {
     "eslint": "*",
     "eslint-config-google": "*",
