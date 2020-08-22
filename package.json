@@ -1,7 +1,7 @@
 {
   "name": "@aspectron/flow-logger",
   "version": "0.0.1",
-  "description": "Log Interfaces",
+  "description": "Logging Subsystems",
   "main": "index.js",
   "repository": {
     "type": "git",
