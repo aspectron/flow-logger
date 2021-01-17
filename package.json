@@ -10,7 +10,9 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
-    "ansi-regex": "*"
+    "@aspectron/flow-utils": "*",
+    "ansi-regex": "^5.0.0",
+    "colors": "^1.4.0"
   },
   "devDependencies": {
     "eslint": "*",
