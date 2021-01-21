@@ -37,6 +37,7 @@
     "lib",
     "README.md",
     "LICENSE",
-    ".jsdoc.js"
+    ".jsdoc.js",
+    "index.d.ts"
   ]
 }
