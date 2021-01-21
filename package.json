@@ -12,7 +12,9 @@
   "dependencies": {
     "@aspectron/flow-utils": "*",
     "ansi-regex": "^5.0.0",
-    "colors": "^1.4.0"
+    "chalk": "^4.1.0",
+    "colors.js": "^1.2.4",
+    "colors.ts": "^1.0.20"
   },
   "devDependencies": {
     "eslint": "*",
@@ -21,7 +23,10 @@
     "flow-jsdoc-template": "git+https://github.com/aspectron/flow-jsdoc-template"
   },
   "scripts": {
-    "docs": "node_modules/.bin/jsdoc --configure .jsdoc.js --verbose"
+    "docs": "node_modules/.bin/jsdoc --configure .jsdoc.js --verbose",
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "prepare": "npm run build"
   },
   "author": {
     "name": "ASPECTRON Inc.",
