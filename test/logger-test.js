@@ -2,12 +2,12 @@
 const { FlowLogger} = require('../');
 
 const log = new FlowLogger('FlowHttp', { 
-    display : ['name','level'], 
-    custom : ['utxo:cyan','tx'], 
-    color: 'name level' 
+    display : ['name', 'level', 'time'], 
+    custom : ['utxo:cyan','tx:green'], 
+    color: 'name level content' 
 });
 
-log.levels.enable('tx');
+//log.levels.disable('all');
 
 log.debug('hello debug');
 log.info('hello info');

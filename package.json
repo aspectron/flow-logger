@@ -33,11 +33,16 @@
     "email": "info@aspectron.com",
     "url": "https://aspectron.com"
   },
+  "exports":{
+    "node": "./lib/node.js",
+    "browser": "./lib/browser.js"
+  },
   "files": [
     "index.js",
     "lib",
     "README.md",
     "LICENSE",
-    ".jsdoc.js"
+    ".jsdoc.js",
+    "index.d.ts"
   ]
 }
