@@ -36,11 +36,11 @@ log.debug('debug test);
 
 */
 
-interface LevelToId {
+interface LogLevelToId {
     [key: string] : number;
 }
 
-interface LevelToColor {
+interface LogLevelToColor {
     [key: string] : string;
 }
 
@@ -50,10 +50,10 @@ class Levels {
 
 
     logger: FlowLogger;
-    level_bits = 0;
-    to_id: LevelToId = { };
-    to_color: LevelToColor = { };
-    levels_ui32_:number = 0;
+    level_bits:number;
+    to_id: LogLevelToId;
+    to_color: LogLevelToColor;
+    levels_ui32_:number;
 
 
     constructor(logger:FlowLogger) {
@@ -112,7 +112,7 @@ class Levels {
     }
 }
 
-declare type logfn = (args: any[]) => void;
+//declare type logfn = (args: any[]) => void;
 //declare type tracefn = 
 
 export class FlowLogger {
