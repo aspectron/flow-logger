@@ -29,8 +29,8 @@
     "url": "https://aspectron.com"
   },
   "exports":{
-    "node": "lib/node.js",
-    "browser": "lib/browser.js"
+    "node": "./lib/node.js",
+    "browser": "./lib/browser.js"
   },
   "files": [
     "index.js",
