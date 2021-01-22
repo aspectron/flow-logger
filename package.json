@@ -2,7 +2,7 @@
   "name": "@aspectron/flow-logger",
   "version": "0.0.2",
   "description": "Logging Subsystems",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aspectron/flow-logger"
@@ -12,7 +12,8 @@
   "dependencies": {
     "@aspectron/flow-utils": "*",
     "ansi-regex": "^5.0.0",
-    "colors.ts": "^1.0.20"
+    "colors.ts": "^1.0.20",
+    "@types/node": "*"
   },
   "devDependencies": {
     "eslint": "*",
@@ -32,7 +33,7 @@
     "url": "https://aspectron.com"
   },
   "exports": {
-    "node": "./index.js",
+    "node": "./dist/index.js",
     "browser": "./dist/lib/flow-logger.js"
   },
   "files": [

@@ -1,3 +1,18 @@
+/*
+
+Usage example:
+
+const log = new FlowLogger('TestLogger', { display : ['name','level'], custom : ['levelA:cyan','levelB'], color: 'name level' });
+log.levels.enable('levelA levelB');
+log.info('info log');
+log.info.trace('info trace');  // prints stack trace
+log.levels.disable('all').enable('debug trace');
+log.trace('trace test);
+log.debug('debug test);
+
+*/
+
+
 let Colors:any;
 
 // @ts-ignore
@@ -16,6 +31,13 @@ function theme(theme: { [key: string]: string; }) {
         Colors.theme(theme);
     }
 }
+
+export type Colorable = 'time'|'name'|'level'|'content'|'prefix'|'all';
+export type Displayable = 'time'|'name'|'level'|'all';
+export interface LogLevelToId { [key: string] : number; }
+export interface LogLevelToColor { [key: string] : string; }
+export interface ProfileMap { [key: string] : number; }
+export declare type SinkFn = (obj: any) => boolean;
 
 interface PrefixId {
     [key: string] : number;
@@ -45,24 +67,21 @@ const levels = {
     debug: 'green',
 }
 
-/*
+export interface FlowLoggerOptions{
+    sink? : SinkFn,     // callback to receive messages
+    levels? : string[],   // levels to enable by default
+    display? : Displayable[],   // part of the prefix to display: time|name|level
+    custom? : Record<string, string>|string[], // custom log levels as { abc : 'cyan', def : 'blue } or ['abc:cyan','def:blue']
+    color? : Colorable[] // component to color time|name|level|content
+}
 
-Usage example:
-
-const log = new FlowLogger('TestLogger', { display : ['name','level'], custom : ['levelA:cyan','levelB'], color: 'name level' });
-log.levels.enable('levelA levelB');
-log.info('info log');
-log.info.trace('info trace');  // prints stack trace
-log.levels.disable('all').enable('debug trace');
-log.trace('trace test);
-log.debug('debug test);
-
-*/
-
-interface LogLevelToId { [key: string] : number; }
-interface LogLevelToColor { [key: string] : string; }
-interface ProfileMap { [key: string] : number; }
-export declare type SinkFn = (obj: any) => boolean;
+export interface FlowLoggerOpt{
+    sink? : SinkFn,
+    levels: string[],
+    display : Displayable[],
+    custom : Record<string, string>|string[],
+    color : Colorable[]
+}
 
 export class FlowLogger {
 
@@ -74,7 +93,7 @@ export class FlowLogger {
     to_id: LogLevelToId;
     to_color: LogLevelToColor;
     levels_ui32_:number;
-    sink:SinkFn|null;
+    sink:SinkFn|undefined;
     profiles:ProfileMap;
 
     //[fn:string] : logfn;
@@ -92,14 +111,14 @@ export class FlowLogger {
     }
 
 
-    constructor(name:string, options_:Object={}) {
-        const options = Object.assign({
+    constructor(name:string, options:FlowLoggerOptions={}) {
+        let opt:FlowLoggerOpt = Object.assign({
             sink : null,                        // callback to receive messages
             levels : ['error','warn','info'],   // levels to enable by default
             display: ['level'],                 // part of the prefix to display: time|name|level
             custom : { },                       // custom log levels as { abc : 'cyan', def : 'blue } or ['abc:cyan','def:blue']
             color : ['name','level']            // component to color time|name|level|content
-        }, options_);
+        }, options);
 
         this.name = name;
         this.name_prefix_ = `[${name}]`;
@@ -112,32 +131,32 @@ export class FlowLogger {
         this.profiles = {};
 
         let custom:any = { }
-        if(Array.isArray(options.custom))
-            options.custom.forEach(l=>{
+        if(Array.isArray(opt.custom))
+            opt.custom.forEach(l=>{
                 let [level,color] = l.split(':');
                 custom[level]=color||'white';
             });
         else
-            custom = options.custom;
+            custom = opt.custom;
 
-        this.sink = options.sink;
+        this.sink = opt.sink;
 
         this.create({
             ...levels,
             ...custom
-        }).enable(options.levels);
+        }).enable(opt.levels);
 
-        if(options.color)
+        if(opt.color)
             theme(this.to_color);
 
-        this.prefix_ui32 = options.display.reduce((v,l)=>v|prefixes[l],0);
+        this.prefix_ui32 = opt.display.reduce((v,l)=>v|prefixes[l],0);
 
         this.prefix_color_ui32 = 0;
-        Object.entries(prefixes).forEach(([prefix,bit]) => {
-            if(options.color.includes(prefix) || options.color.includes('prefix') || options.color.includes('all'))
+        Object.entries(prefixes).forEach(([prefix, bit]) => {
+            if(opt.color.includes(prefix as Colorable) || opt.color.includes('prefix') || opt.color.includes('all'))
                 this.prefix_color_ui32 |= bit;
         })
-        this.color_content = options.color.includes('content') || options.color.includes('all');
+        this.color_content = opt.color.includes('content') || opt.color.includes('all');
     }
 
 

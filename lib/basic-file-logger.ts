@@ -1,17 +1,18 @@
+/*
 const fs = require('fs');
 const path = require('path');
 const ansiRegex = require('ansi-regex');
 
-const dpc = (delay, fn)=>{
+const dpc = (delay:Function|number, fn:Function|number|undefined)=>{
 	if(typeof delay == 'function')
-		return setTimeout(delay, fn||0);
-	return setTimeout(fn, delay||0);
+		return setTimeout(delay as Function, (fn||0) as number);
+	return setTimeout(fn as Function, delay||0);
 }
 
 
 // const MAX_LOG_FILE_SIZE = 50 * 1014 * 1024
-const FlowBasicLogger = function(options) {
-    var self = this;
+const FlowBasicLogger = function(options:any) {
+    var self:any = this;
     var file = options.filename;
 
     var logIntervalTime = options.logIntervalTime || 24 * 60 * 60;
@@ -24,7 +25,7 @@ const FlowBasicLogger = function(options) {
     buildNewFileName();
 
     var flag = false;
-    self.write = (text) => {
+    self.write = (text:string) => {
         if(!options.ansi)
             text = (text||'').toString().replace(ansiRegex_,'');
         if( flag ){
@@ -94,8 +95,8 @@ const FlowBasicLogger = function(options) {
         newFile = 'L-$$$'+ext;
     }
 
-    function copyFile(callback){
-        fs.readFile(file, (err, data) => {
+    function copyFile(callback:any){
+        fs.readFile(file, (err:any, data:any) => {
             if (err)
                 return callback();
 
@@ -124,7 +125,7 @@ const FlowBasicLogger = function(options) {
 
     function removeOldLogs(){
         var files = [];
-        function done(a){
+        function done(a?:any){
             var fLength = files.length;
             if ( fLength <= logFilesCount)
                 return;
@@ -135,7 +136,7 @@ const FlowBasicLogger = function(options) {
             }
         }
 
-        fs.readdir(folderPath, function(err, list) {
+        fs.readdir(folderPath, function(err:any, list:any) {
             if (err)
                 return done(err);
 
@@ -143,7 +144,7 @@ const FlowBasicLogger = function(options) {
             if (!pending)
                 return done();
 
-            list.forEach(function(file) {
+            list.forEach(function(file:string) {
                 if (file.indexOf('L-')!==0){
                     if (!--pending)
                         done();
@@ -151,7 +152,7 @@ const FlowBasicLogger = function(options) {
                 }
 
                 file = folderPath + '/' + file;
-                fs.stat(file, function(err, stat) {
+                fs.stat(file, function(err:any, stat:any) {
                     if (stat) {
                         files.push({file: file, t: stat.ctime.getTime()})
                     }
@@ -165,3 +166,4 @@ const FlowBasicLogger = function(options) {
 
 
 module.exports = { FlowBasicLogger };
+*/
