@@ -40,13 +40,5 @@
   "exports__": {
     "node": "./dist/index.js",
     "browser": "./dist/lib/flow-logger.js"
-  },
-  "files": [
-    "index.ts",
-    "lib",
-    "README.md",
-    "LICENSE",
-    ".jsdoc.js",
-    "tsconfig.json"
-  ]
+  }
 }
