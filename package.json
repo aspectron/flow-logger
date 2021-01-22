@@ -19,7 +19,8 @@
     "eslint": "*",
     "eslint-config-google": "*",
     "jsdoc": "*",
-    "flow-jsdoc-template": "git+https://github.com/aspectron/flow-jsdoc-template"
+    "flow-jsdoc-template": "git+https://github.com/aspectron/flow-jsdoc-template",
+    "ts-node": "^9.0.0"
   },
   "scripts": {
     "docs": "node_modules/.bin/jsdoc --configure .jsdoc.js --verbose",
