@@ -182,6 +182,13 @@ export class FlowLogger {
         return levels.reduce((v:number,l:string)=>v|this.to_id[l],0);
     }
 
+    setLevel(levels:string|string[]){
+        if(levels == 'none')
+            return this.disable('all')
+
+        return this.enable(levels);
+    }
+
     enable(levels:string|string[]):FlowLogger {
         if(levels == 'all') {
             this.levels_ui32_ = 0xffffffff;
