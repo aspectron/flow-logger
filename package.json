@@ -44,5 +44,6 @@
     "README.md",
     "LICENSE",
     ".jsdoc.js"
+    "tsconfig.json"
   ]
 }
