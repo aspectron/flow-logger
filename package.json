@@ -1,6 +1,6 @@
 {
   "name": "@aspectron/flow-logger",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Logging Subsystems",
   "main": "dist/index.js",
   "repository": {
@@ -30,8 +30,7 @@
     "docs": "node_modules/.bin/jsdoc --configure .jsdoc.js --verbose",
     "build": "tsc",
     "watch": "tsc --watch",
-    "prepare": "npm run build",
-    "postinstall": "npm run build"
+    "prepare": "npm run build"
   },
   "author": {
     "name": "ASPECTRON Inc.",
