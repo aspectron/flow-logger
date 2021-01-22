@@ -12,8 +12,6 @@
   "dependencies": {
     "@aspectron/flow-utils": "*",
     "ansi-regex": "^5.0.0",
-    "chalk": "^4.1.0",
-    "colors.js": "^1.2.4",
     "colors.ts": "^1.0.20"
   },
   "devDependencies": {
@@ -33,9 +31,9 @@
     "email": "info@aspectron.com",
     "url": "https://aspectron.com"
   },
-  "exports":{
-    "node": "./lib/node.js",
-    "browser": "./lib/browser.js"
+  "exports": {
+    "node": "./index.js",
+    "browser": "./dist/lib/flow-logger.js"
   },
   "files": [
     "index.js",
