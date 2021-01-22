@@ -34,7 +34,7 @@
     "email": "info@aspectron.com",
     "url": "https://aspectron.com"
   },
-  "exports": {
+  "exports__": {
     "node": "./dist/index.js",
     "browser": "./dist/lib/flow-logger.js"
   },
