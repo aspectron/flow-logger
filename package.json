@@ -13,15 +13,15 @@
     "@aspectron/flow-utils": "*",
     "ansi-regex": "^5.0.0",
     "colors.ts": "^1.0.20",
-    "@types/node": "*"
+    "@types/node": "*",
+    "ts-node": "^9.0.0",
+    "typescript": "*"
   },
   "devDependencies": {
     "eslint": "*",
     "eslint-config-google": "*",
     "jsdoc": "*",
-    "flow-jsdoc-template": "git+https://github.com/aspectron/flow-jsdoc-template",
-    "ts-node": "^9.0.0",
-    "typescript": "*"
+    "flow-jsdoc-template": "git+https://github.com/aspectron/flow-jsdoc-template"
   },
   "scripts": {
     "docs": "node_modules/.bin/jsdoc --configure .jsdoc.js --verbose",
