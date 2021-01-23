@@ -1,6 +1,6 @@
 {
   "name": "@aspectron/flow-logger",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Logging Subsystems",
   "main": "dist/index.js",
   "repository": {
@@ -19,8 +19,10 @@
     "eslint-config-google": "*",
     "jsdoc": "*",
     "flow-jsdoc-template": "git+https://github.com/aspectron/flow-jsdoc-template",
-    "typescript": "*"
-  },
+    "typescript": "*",
+    "@types/node": "^14.14.9",
+    "ts-node": "^9.0.0"
+},
   "scripts": {
     "docs": "node_modules/.bin/jsdoc --configure .jsdoc.js --verbose",
     "build": "rm -rf ./dist && tsc",
