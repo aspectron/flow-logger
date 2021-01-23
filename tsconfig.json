@@ -8,7 +8,7 @@
     "skipLibCheck": true,
     "typeRoots": ["types", "node_modules/@types"],
     "paths": {
-      "*": ["./types/*","./lib/*"]
+      "*": ["./types/*"]
     },
     "baseUrl": ".",
     "outDir": "./dist",
@@ -25,5 +25,8 @@
   "files": [
     "index.ts",
     "lib/flow-logger.ts"
+  ],
+  "include": [
+    "lib/*"
   ]
 }
