@@ -16,7 +16,7 @@ log.debug('debug test);
 let Colors:any;
 
 // @ts-ignore
-const isNODE = typeof process === "object" && `${process}` === "[object process]";
+const isNODE = typeof window == 'undefined' && typeof process === "object" && `${process}` === "[object process]";
 if(isNODE){
     // @ts-ignore
     Colors = require('colors.ts');
