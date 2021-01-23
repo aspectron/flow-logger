@@ -28,9 +28,8 @@
   },
   "scripts": {
     "docs": "node_modules/.bin/jsdoc --configure .jsdoc.js --verbose",
-    "install": "echo hello && tsc",
-    "watch": "tsc --watch",
-    "prepare": "npm run build"
+    "install": "tsc",
+    "watch": "tsc --watch"
   },
   "author": {
     "name": "ASPECTRON Inc.",
