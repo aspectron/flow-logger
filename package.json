@@ -23,7 +23,7 @@
   },
   "scripts": {
     "docs": "node_modules/.bin/jsdoc --configure .jsdoc.js --verbose",
-    "build": "tsc",
+    "install": "tsc",
     "watch": "tsc --watch"
   },
   "author": {
