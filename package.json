@@ -43,7 +43,7 @@
   },
   "files": [
     "index.ts",
-    "./lib/flow-logger.ts",
+    "lib/flow-logger.ts",
     "README.md",
     "LICENSE",
     ".jsdoc.js",
