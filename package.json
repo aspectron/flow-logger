@@ -1,6 +1,6 @@
 {
   "name": "@aspectron/flow-logger",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "Logging Subsystems",
   "main": "dist/index.js",
   "repository": {
@@ -37,7 +37,7 @@
   },
   "files": [
     "index.ts",
-    "lib",
+    "lib/*",
     "README.md",
     "LICENSE",
     ".jsdoc.js",
