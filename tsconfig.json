@@ -21,5 +21,9 @@
     "experimentalDecorators":true,
     "module":"CommonJS"//,
     //"_esModuleInterop": true
-  }
+  },
+  "files": [
+    "index.ts",
+    "lib/flow-logger.ts"
+  ]
 }
