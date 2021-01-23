@@ -1,6 +1,6 @@
 {
   "name": "@aspectron/flow-logger",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Logging Subsystems",
   "main": "dist/index.js",
   "repository": {
@@ -23,7 +23,7 @@
   },
   "scripts": {
     "docs": "node_modules/.bin/jsdoc --configure .jsdoc.js --verbose",
-    "prepare": "tsc",
+    "build": "tsc",
     "watch": "tsc --watch"
   },
   "author": {

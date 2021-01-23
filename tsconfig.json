@@ -19,6 +19,7 @@
     "inlineSources": true,
     "resolveJsonModule": true,
     "experimentalDecorators":true,
+    "allowSyntheticDefaultImports":true,
     "module":"CommonJS"//,
     //"_esModuleInterop": true
   }
