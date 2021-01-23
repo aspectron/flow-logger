@@ -6,9 +6,9 @@
     // this enables stricter inference for data properties on `this`
     "strict": false,
     "skipLibCheck": true,
-    "typeRoots": ["types", "node_modules/@types"],
+    "typeRoots": [],
     "paths": {
-      "*": ["./types/*", "./lib"]
+      "*": ["./types/*", "./lib/*"]
     },
     "baseUrl": ".",
     "outDir": "./dist",

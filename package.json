@@ -1,6 +1,6 @@
 {
   "name": "@aspectron/flow-logger",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Logging Subsystems",
   "main": "dist/index.js",
   "repository": {
@@ -12,18 +12,13 @@
   "dependencies": {
     "@aspectron/flow-utils": "*",
     "ansi-regex": "^5.0.0",
-    "colors.ts": "^1.0.20",
-    "@types/node": "^14.14.9",
-    "ts-node": "^9.0.0",
-    "typescript": "*"
+    "colors.ts": "^1.0.20"
   },
   "devDependencies": {
     "eslint": "*",
     "eslint-config-google": "*",
     "jsdoc": "*",
     "flow-jsdoc-template": "git+https://github.com/aspectron/flow-jsdoc-template",
-    "@types/node": "^14.14.9",
-    "ts-node": "^9.0.0",
     "typescript": "*"
   },
   "scripts": {
@@ -42,6 +37,7 @@
   },
   "files": [
     "index.ts",
+    "lib",
     "README.md",
     "LICENSE",
     ".jsdoc.js",
