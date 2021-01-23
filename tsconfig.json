@@ -4,11 +4,11 @@
     "lib": ["ES2020", "DOM"],
     "moduleResolution": "node",
     // this enables stricter inference for data properties on `this`
-    "strict": true,
+    "strict": false,
     "skipLibCheck": true,
     "typeRoots": ["types", "node_modules/@types"],
     "paths": {
-      "*": ["./types/*"]
+      "*": ["./types/*", "./lib/*"]
     },
     "baseUrl": ".",
     "outDir": "./dist",
@@ -21,12 +21,5 @@
     "experimentalDecorators":true,
     "module":"CommonJS"//,
     //"_esModuleInterop": true
-  },
-  "files": [
-    "index.ts",
-    "lib/flow-logger.ts"
-  ],
-  "include": [
-    "lib/*"
-  ]
+  }
 }
