@@ -28,7 +28,7 @@
   },
   "scripts": {
     "docs": "node_modules/.bin/jsdoc --configure .jsdoc.js --verbose",
-    "build": "tsc -p ./lib",
+    "build": "tsc -p ./",
     "watch": "tsc --watch",
     "prepare": "npm run build"
   },
