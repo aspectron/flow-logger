@@ -2,7 +2,7 @@
   "name": "@aspectron/flow-logger",
   "version": "0.0.16",
   "description": "Logging Subsystems",
-  "main": "dist/index.js",
+  "main": "dist/lib/flow-logger.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aspectron/flow-logger"
@@ -28,7 +28,7 @@
   },
   "scripts": {
     "docs": "node_modules/.bin/jsdoc --configure .jsdoc.js --verbose",
-    "install": "tsc",
+    "build": "tsc",
     "watch": "tsc --watch"
   },
   "author": {
@@ -42,7 +42,8 @@
   },
   "files": [
     "index.ts",
-    "lib/flow-logger.ts",
+    "lib",
+    "dist",
     "README.md",
     "LICENSE",
     ".jsdoc.js",
