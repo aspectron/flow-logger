@@ -10,8 +10,8 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
+    "@aspectron/colors.ts": "^1.0.0",
     "@aspectron/flow-utils": "*",
-    "@aspectron/colors.ts": "@aspectron/colors.ts",
     "ansi-regex": "^5.0.0"
   },
   "devDependencies": {
