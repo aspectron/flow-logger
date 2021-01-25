@@ -112,6 +112,9 @@ export class FlowLogger {
 
 
     constructor(name:string, options:FlowLoggerOptions={}) {
+        if(typeof name != 'string')
+            throw new Error('FlowLogger::constructor() - first argument must be a string');
+
         let opt:FlowLoggerOpt = Object.assign({
             sink : null,                        // callback to receive messages
             levels : ['error','warn','info'],   // levels to enable by default
@@ -144,7 +147,7 @@ export class FlowLogger {
         this.create({
             ...levels,
             ...custom
-        }).enable(opt.levels);
+        }).enable(opt.levels).enable(Object.keys(custom));
 
         if(opt.color)
             theme(this.to_color);
