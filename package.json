@@ -11,7 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "@aspectron/flow-utils": "*",
-    "@aspectron/colors.ts": "@aspectron/colors.ts",
+    "@aspectron/colors.ts": "aspectron/colors.ts",
     "ansi-regex": "^5.0.0"
   },
   "devDependencies": {
@@ -22,11 +22,11 @@
     "typescript": "*",
     "@types/node": "^14.14.9",
     "ts-node": "^9.0.0"
-},
+  },
   "scripts": {
     "docs": "node_modules/.bin/jsdoc --configure .jsdoc.js --verbose",
     "watch": "tsc --watch",
-    "prepare" : "rm -rf ./dist && tsc"
+    "prepare": "rm -rf ./dist && tsc"
   },
   "author": {
     "name": "ASPECTRON Inc.",
