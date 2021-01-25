@@ -1,6 +1,6 @@
 {
   "name": "@aspectron/flow-logger",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Logging Subsystems",
   "main": "dist/index.js",
   "repository": {
@@ -11,8 +11,8 @@
   "license": "MIT",
   "dependencies": {
     "@aspectron/flow-utils": "*",
-    "ansi-regex": "^5.0.0",
-    "colors.ts": "^1.0.20"
+    "@aspectron/colors.ts": "@aspectron/colors.ts",
+    "ansi-regex": "^5.0.0"
   },
   "devDependencies": {
     "eslint": "*",

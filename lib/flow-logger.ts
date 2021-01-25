@@ -19,7 +19,7 @@ let Colors:any;
 const isNODE = typeof window == 'undefined' && typeof process === "object" && `${process}` === "[object process]";
 if(isNODE){
     // @ts-ignore
-    Colors = require('colors.ts');
+    Colors = require('@aspectron/colors.ts');
 }
 
 function ansi_color(text:string, color:string) {
