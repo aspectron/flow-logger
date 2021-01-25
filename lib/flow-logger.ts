@@ -189,7 +189,7 @@ export class FlowLogger {
         if(levels == 'none')
             return this.disable('all')
 
-        return this.enable(levels);
+        return this.disable('all').enable(levels);
     }
 
     enable(levels:string|string[]):FlowLogger {
