@@ -16,7 +16,16 @@ log.debug('debug test);
 let Colors:any;
 
 // @ts-ignore
-const isNODE = typeof window == 'undefined' && typeof process === "object" && `${process}` === "[object process]";
+const isNODE = typeof window == 'undefined' 
+    // @ts-ignore
+    && typeof process === "object" 
+    // @ts-ignore
+    && `${process}` === "[object process]" 
+    // @ts-ignore
+    && typeof require == 'function'
+    // @ts-ignore
+    && typeof require('nw.gui') === 'undefined';
+
 if(isNODE){
     // @ts-ignore
     Colors = require('@aspectron/colors.ts');
