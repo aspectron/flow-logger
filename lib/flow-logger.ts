@@ -16,15 +16,23 @@ log.debug('debug test);
 let Colors:any;
 
 // @ts-ignore
-const isNODE = typeof window == 'undefined' 
+let isNODE = typeof window == 'undefined' 
     // @ts-ignore
     && typeof process === "object" 
     // @ts-ignore
     && `${process}` === "[object process]" 
     // @ts-ignore
-    && typeof require == 'function'
-    // @ts-ignore
-    && typeof require('nw.gui') === 'undefined';
+    && typeof require == 'function';
+
+if(isNODE){
+    try{
+        // @ts-ignore
+        require('nw.gui')
+        isNODE = false
+    }catch(e){
+
+    }
+}
 
 if(isNODE){
     // @ts-ignore
