@@ -24,15 +24,9 @@ let isNODE = typeof window == 'undefined'
     // @ts-ignore
     && typeof require == 'function';
 
-if(isNODE){
-    try{
-        // @ts-ignore
-        require('nw.gui')
-        isNODE = false
-    }catch(e){
-
-    }
-}
+// @ts-ignore
+if(isNODE && typeof nw !== 'undefined')
+    isNODE = false;
 
 if(isNODE){
     // @ts-ignore
