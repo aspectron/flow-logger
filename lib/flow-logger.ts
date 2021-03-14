@@ -212,6 +212,9 @@ export class FlowLogger {
         Object.entries(this.to_id).forEach(([l,bit]) => {
             if(levels.includes(l))
                 this.levels_ui32_ |= bit;
+            else
+            if(this.to_id[l] === undefined)
+                throw new Error(`FlowLogger::enable() - unknown log level "${l}"`);
         })
 
         return this;
@@ -231,9 +234,9 @@ export class FlowLogger {
         return this;
     }
 
-    // digest(sink) {
-    //     this.sink = sink;
-    // }
+    relayTo(sink:SinkFn) {
+        this.sink = sink;
+    }
 
     log_(level:string, ...args:any[]): FlowLogger {
 
